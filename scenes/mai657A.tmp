@@ -1,0 +1,184 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlpae8hjxaqfh"]
+
+[ext_resource type="Script" path="res://scripts/Puzzleboard.gd" id="1_7srm1"]
+
+[node name="MainDisplay" type="Node2D"]
+
+[node name="Scoreboard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Puzzleboard" type="VBoxContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_7srm1")
+
+[node name="Row 1" type="HBoxContainer" parent="Puzzleboard"]
+layout_mode = 2
+
+[node name="Letter 1" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 2" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 3" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 4" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 5" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 6" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 7" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 8" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 9" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 10" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 11" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Letter 12" type="Label" parent="Puzzleboard/Row 1"]
+layout_mode = 2
+
+[node name="Row 2" type="HBoxContainer" parent="Puzzleboard"]
+layout_mode = 2
+
+[node name="Letter 1" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 2" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 3" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 4" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 5" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 6" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 7" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 8" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 9" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 10" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 11" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 12" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 13" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Letter 14" type="Label" parent="Puzzleboard/Row 2"]
+layout_mode = 2
+
+[node name="Row 3" type="HBoxContainer" parent="Puzzleboard"]
+layout_mode = 2
+
+[node name="Letter 1" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 2" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 3" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 4" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 5" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 6" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 7" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 8" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 9" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 10" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 11" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 12" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 13" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Letter 14" type="Label" parent="Puzzleboard/Row 3"]
+layout_mode = 2
+
+[node name="Row 4" type="HBoxContainer" parent="Puzzleboard"]
+layout_mode = 2
+
+[node name="Letter 1" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 2" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 3" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 4" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 5" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 6" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 7" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 8" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 9" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 10" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 11" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2
+
+[node name="Letter 12" type="Label" parent="Puzzleboard/Row 4"]
+layout_mode = 2

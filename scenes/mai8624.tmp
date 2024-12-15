@@ -1,0 +1,1266 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlpae8hjxaqfh"]
+
+[ext_resource type="Script" path="res://scripts/Puzzleboard.gd" id="1_7srm1"]
+[ext_resource type="Texture2D" uid="uid://blv1rw0gvs0r0" path="res://scenes/boardOutline.png" id="1_sk4fq"]
+[ext_resource type="Theme" uid="uid://d3cxq3h6kmcf" path="res://scenes/BoardTheme.tres" id="2_uipc3"]
+[ext_resource type="StyleBox" uid="uid://uhio37noftwk" path="res://scenes/EmptyBox.tres" id="3_xjbca"]
+[ext_resource type="StyleBox" uid="uid://dn54u030bljb4" path="res://scenes/PanelDisplay.tres" id="4_m08rk"]
+
+[node name="MainDisplay" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BoardOutline" type="Sprite2D" parent="CanvasLayer/Control"]
+position = Vector2(-13, 20)
+scale = Vector2(2, 2)
+texture = ExtResource("1_sk4fq")
+
+[node name="Puzzleboard" type="VBoxContainer" parent="CanvasLayer/Control"]
+clip_contents = true
+layout_mode = 2
+offset_left = -810.0
+offset_top = -260.0
+offset_right = 790.0
+offset_bottom = 300.0
+theme_override_constants/separation = 0
+script = ExtResource("1_7srm1")
+
+[node name="Row 1" type="HBoxContainer" parent="CanvasLayer/Control/Puzzleboard"]
+z_index = 1
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="InvisiblePanel" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_xjbca")
+
+[node name="Panel 1" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 2" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 3" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 4" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 5" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 6" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 7" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 8" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 9" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 10" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 11" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 12" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 1"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 1/Panel 12"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row 2" type="HBoxContainer" parent="CanvasLayer/Control/Puzzleboard"]
+z_index = 1
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel 1" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 2" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 3" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 4" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 5" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 6" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 7" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 8" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 9" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 10" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 11" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 12" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 12"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 13" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 13"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 14" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 2"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 2/Panel 14"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row 3" type="HBoxContainer" parent="CanvasLayer/Control/Puzzleboard"]
+z_index = 1
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Panel 1" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 2" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 3" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 4" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 5" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 6" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 7" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 8" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 9" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 10" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 11" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 12" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 12"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 13" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 13"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 14" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 3"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 3/Panel 14"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Row 4" type="HBoxContainer" parent="CanvasLayer/Control/Puzzleboard"]
+z_index = 1
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="InvisiblePanel" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("3_xjbca")
+
+[node name="Panel 1" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 2" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 3" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 4" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 5" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 6" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 7" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 8" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 9" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 9"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 10" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 10"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 11" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 11"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel 12" type="Panel" parent="CanvasLayer/Control/Puzzleboard/Row 4"]
+custom_minimum_size = Vector2(114, 145)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("4_m08rk")
+
+[node name="Letter 1" type="Label" parent="CanvasLayer/Control/Puzzleboard/Row 4/Panel 12"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.0
+offset_top = -87.5
+offset_right = 12.0
+offset_bottom = 87.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_uipc3")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1

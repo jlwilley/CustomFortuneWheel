@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cyma6fqx5i6t3"]
+
+[ext_resource type="FontFile" uid="uid://teps16w32kda" path="res://scenes/Themes/ControlPanelFont.tres" id="1_iwmhe"]
+
+[resource]
+default_font = ExtResource("1_iwmhe")

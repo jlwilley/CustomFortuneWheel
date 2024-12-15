@@ -1,0 +1,980 @@
+[gd_scene load_steps=8 format=3 uid="uid://bt14ln41ck803"]
+
+[ext_resource type="Script" path="res://scripts/control_panel.gd" id="1_45841"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xcxt"]
+bg_color = Color(0.937255, 0.278431, 0.435294, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84132"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fxt0"]
+bg_color = Color(0.136826, 0.136826, 0.136826, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dymet"]
+bg_color = Color(1, 0.819608, 0.4, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh31r"]
+bg_color = Color(0.0235294, 0.839216, 0.627451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je0rh"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_45841")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(500, 1080)
+layout_mode = 0
+offset_right = 800.0
+offset_bottom = 1080.0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="team1Panel" type="Panel" parent="CanvasLayer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(800, 320)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5xcxt")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/VBoxContainer/team1Panel"]
+custom_minimum_size = Vector2(600, 320)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="gridEntry0" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="gridEntry1" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col1Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry1"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Current"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry2" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col2Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry2"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "New"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry3" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col3Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry3"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Update"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry4" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry4"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry5" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry5"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry6" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry6"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team 1"
+alignment = 1
+
+[node name="gridEntry7" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="team1UpdateName" type="Button" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry7"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Name"
+
+[node name="gridEntry8" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry8"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry9" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry9"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry10" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry10"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+alignment = 1
+
+[node name="gridEntry11" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="team1UpdatePoints" type="Button" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry11"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Points"
+
+[node name="gridEntry12" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry12"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Banked Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry13" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry13"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry14" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry14"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+alignment = 1
+
+[node name="gridEntry15" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="team1UpdateBank" type="Button" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry15"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Bank"
+
+[node name="team2Panel" type="Panel" parent="CanvasLayer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(800, 320)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dymet")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/VBoxContainer/team2Panel"]
+custom_minimum_size = Vector2(600, 320)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="gridEntry0" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="gridEntry1" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col1Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry1"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Current"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry2" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col2Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry2"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "New"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry3" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col3Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry3"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Update"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry4" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry4"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry5" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry5"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry6" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry6"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team 1"
+alignment = 1
+
+[node name="gridEntry7" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry7"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Name"
+
+[node name="gridEntry8" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry8"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry9" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry9"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry10" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry10"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+alignment = 1
+
+[node name="gridEntry11" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry11"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Points"
+
+[node name="gridEntry12" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry12"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Banked Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry13" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry13"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry14" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry14"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+alignment = 1
+
+[node name="gridEntry15" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry15"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Bank"
+
+[node name="team3Panel" type="Panel" parent="CanvasLayer/Control/VBoxContainer"]
+custom_minimum_size = Vector2(800, 320)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xh31r")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Control/VBoxContainer/team3Panel"]
+custom_minimum_size = Vector2(600, 320)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 4
+
+[node name="gridEntry0" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="gridEntry1" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col1Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry1"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Current"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry2" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col2Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry2"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "New"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry3" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="col3Label" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry3"]
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Update"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry4" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry4"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry5" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry5"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry6" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry6"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Team 1"
+alignment = 1
+
+[node name="gridEntry7" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry7"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Name"
+
+[node name="gridEntry8" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry8"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry9" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry9"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry10" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry10"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+alignment = 1
+
+[node name="gridEntry11" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry11"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Points"
+
+[node name="gridEntry12" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="rowLabel" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry12"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "Banked Points"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry13" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry13"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true
+
+[node name="gridEntry14" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry14"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 1
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 25
+text = "0"
+alignment = 1
+
+[node name="gridEntry15" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
+custom_minimum_size = Vector2(200, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry15"]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -30.0
+offset_right = 75.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fxt0")
+text = "Update Bank"
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(500, 1080)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -500.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_right = 159.0
+offset_bottom = 76.0
+item_count = 3
+selected = 1
+popup/item_0/text = "Team 1"
+popup/item_0/id = 1
+popup/item_1/text = "Team 2"
+popup/item_1/id = 2
+popup/item_2/text = "Team 3"
+popup/item_2/id = 3
+
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Control/Panel"]
+layout_mode = 0
+offset_left = 273.0
+offset_top = 22.0
+offset_right = 363.0
+offset_bottom = 53.0
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control"]
+custom_minimum_size = Vector2(500, 1080)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1068.0
+offset_right = -568.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+
+[node name="Panel2" type="Panel" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="puzzleSelector" type="OptionButton" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 61.0
+
+[node name="puzzleSolution" type="Label" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 18.0
+offset_right = 264.0
+offset_bottom = 41.0
+
+[node name="points" type="Label" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 22.0
+offset_right = 184.0
+offset_bottom = 45.0
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -250.0
+offset_top = -200.0
+offset_right = 250.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_je0rh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel2/Panel"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="clueEdit" type="LineEdit" parent="CanvasLayer/Control/Panel2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Clue"
+
+[node name="solutionEdit" type="LineEdit" parent="CanvasLayer/Control/Panel2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Solution"
+
+[node name="pointsEdit" type="LineEdit" parent="CanvasLayer/Control/Panel2/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+placeholder_text = "Points"
+
+[node name="addPuzzleButton" type="Button" parent="CanvasLayer/Control/Panel2/Panel/VBoxContainer"]
+layout_mode = 2
+text = "Add Puzzle"
+
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry7/team1UpdateName" to="." method="_on_team_1_update_name_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel2/Panel/VBoxContainer/addPuzzleButton" to="." method="_on_add_puzzle_button_pressed"]
