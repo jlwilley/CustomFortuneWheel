@@ -245,19 +245,19 @@ func resetBoard():
 #sets up all the audio players for playing
 func setupAudio():
 	ding_player = AudioStreamPlayer.new()
-	ding_player.stream = preload("res://sounds/Ding.mp3")
+	ding_player.stream = preload("res://sounds/Ding.ogg")
 	add_child(ding_player)
 	solve_player = AudioStreamPlayer.new()
-	solve_player.stream = preload("res://sounds/Solve.mp3")
+	solve_player.stream = preload("res://sounds/Solve.ogg")
 	add_child(solve_player)
 	setup_player = AudioStreamPlayer.new()
-	setup_player.stream = preload("res://sounds/PuzzleSetup.mp3")
+	setup_player.stream = preload("res://sounds/PuzzleSetup.ogg")
 	add_child(setup_player)
 	bankrupt_player = AudioStreamPlayer.new()
-	bankrupt_player.stream = preload("res://sounds/Bankrupt.mp3")
+	bankrupt_player.stream = preload("res://sounds/Bankrupt.ogg")
 	add_child(bankrupt_player)
 	incorrect_player = AudioStreamPlayer.new()
-	incorrect_player.stream = preload("res://sounds/Incorrect.mp3")
+	incorrect_player.stream = preload("res://sounds/Incorrect.ogg")
 	add_child(incorrect_player)
 
 #on first load set up board and audio players
