@@ -1,16 +1,25 @@
 extends VBoxContainer
 
-# Initialize `revealed` as an empty array, and populate it in _ready()
+#2d arrary for storing all letters in the board
 var board =[]
+#theme that a empty letterbox has
 var emptyBoxTheme
+#theme that a letter box has without a letter
 var letterBoxTheme
+#theme that a letterbox has with a correct letter
 var correctBoxTheme
+#audio player for ding sound effect
 var ding_player
+#audio player for setting up puzzle
 var setup_player
+#audio player for solving puzzle
 var solve_player
+#audio player for incorrect answer
 var incorrect_player
+#audio player for bankrupt sound
 var bankrupt_player
 
+#converts the current puzzle board to displayable text
 func boardToText():
 	var outputString = ""
 	for row in board:
@@ -21,23 +30,30 @@ func boardToText():
 				outputString += " "
 		outputString += "\n"
 	return outputString
-		
+
+#entries for being stored in a puzzle board
 class entry:
+	#if the entry has been revealed
 	var revealed = false
+	#correct value for entry
 	var value = null
+	#reference to label that will display entry
 	var label = null
+	#panel containing outline for label
 	var display = null
 	
+	#resets the entry to default values
 	func reset():
 		label.text = ""
 		value = null
 		revealed = false
 	
+	#reveals the entry and updates its label
 	func reveal():
 		label.text = value
 		revealed = true
-	
-	
+
+#fills in the board and generates the correct themes
 func setupBoard():
 	var i = 0
 	for child in get_children():
@@ -55,7 +71,8 @@ func setupBoard():
 	correctBoxTheme = letterBoxTheme.duplicate()
 	correctBoxTheme.bg_color = Color(0,.749,1)
 	print("Board Setup")
-	
+
+#reveals all unrevealed entries on the board
 func revealAll():
 	for row in board:
 		for col in row:
@@ -63,11 +80,13 @@ func revealAll():
 				col.reveal()
 				await get_tree().create_timer(.125).timeout
 	print("revealing")
-	
+
+#reveals the specified character on the board and returns the number of that character that was on board
 func reveal(character):
 	var charCount = 0
 	for row in board:
 		for col in row:
+			#checks if the entry has been revealed and if the value matches the specified one
 			if col.revealed == false && col.value != null && col.value == character.capitalize():
 				col.display.add_theme_stylebox_override("panel", correctBoxTheme)
 				ding_player.play()
@@ -77,10 +96,14 @@ func reveal(character):
 				await get_tree().create_timer(.7).timeout
 				charCount += 1
 				
+	#If there was no value play the incorrect sound effect
 	if charCount == 0:
 		incorrect_player.play()
 	return charCount
 
+#format the given string to the board by updating entries
+#this function tries to display the string on the board in the best possible way using the minimum
+#number of lines and trying to center it if only one line
 func formatStringToBoard(inputString):
 	var words = inputString.split(" ")
 	var min_row = min_display_rows(words)
@@ -95,12 +118,12 @@ func formatStringToBoard(inputString):
 				char_length += 1
 			char_length += len(word)
 			idx += 1
-		offset_length = floor((14 - char_length) / 2)
+		offset_length = floor((14 - float(char_length)) / 2)
 		var charCount = offset_length
 		for word in words:
-			for char in word:
-				board[1][charCount].value = char.capitalize()
-				if(char.capitalize() in ",.'!?"):
+			for c in word:
+				board[1][charCount].value = c.capitalize()
+				if(c.capitalize() in ",.'!?"):
 					board[1][charCount].reveal()
 				charCount += 1
 			charCount +=1
@@ -113,9 +136,9 @@ func formatStringToBoard(inputString):
 			if(len(word) > 14 - charCount):
 				rowCount += 1
 				charCount = 0
-			for char in word:
-				board[rowCount][charCount].value = char.capitalize()
-				if(char.capitalize() in ",.'!?"):
+			for c in word:
+				board[rowCount][charCount].value = c.capitalize()
+				if(c.capitalize() in ",.'!?"):
 					board[rowCount][charCount].reveal()
 				charCount += 1
 			charCount +=1
@@ -128,14 +151,14 @@ func formatStringToBoard(inputString):
 			if(len(word) > 12 - charCount):
 				rowCount += 1
 				charCount = 0
-			for char in word:
+			for c in word:
 				if(rowCount in [0,3]):
-					board[rowCount][charCount].value = char.capitalize()
-					if(char.capitalize() in ",.'!?"):
+					board[rowCount][charCount].value = c.capitalize()
+					if(c.capitalize() in ",.'!?"):
 						board[rowCount][charCount].reveal()
 				else:
-					board[rowCount][charCount + 1].value = char.capitalize()
-					if(char.capitalize() in ",.'!?"):
+					board[rowCount][charCount + 1].value = c.capitalize()
+					if(c.capitalize() in ",.'!?"):
 						board[rowCount][charCount + 1].reveal()
 				charCount += 1
 			charCount +=1
@@ -146,6 +169,7 @@ func formatStringToBoard(inputString):
 		print("Invalid string will not fit on board")
 		return
 
+#update the background colors of the entries
 func format_colors():
 	for row in board:
 		for col in row:
@@ -154,6 +178,7 @@ func format_colors():
 			else:
 				col.display.add_theme_stylebox_override("panel", letterBoxTheme)
 
+#calculates the minimum number of rows needed to display the given words
 func min_display_rows(words):
 	var word_count = 0
 	var total_length = 0
@@ -181,6 +206,7 @@ func min_display_rows(words):
 	else:
 		return 5
 
+#check if displaying the given words will generate overflow
 func checkOverflow(words, num_lines):
 	var max_line_length
 	if(num_lines == 2):
@@ -209,12 +235,14 @@ func checkOverflow(words, num_lines):
 	print("Not overflow found")
 	return true
 
+#resets all entries in the board
 func resetBoard():
 	for row in board:
 		for col in row:
 			col.reset()
 	print("resetting")
 
+#sets up all the audio players for playing
 func setupAudio():
 	ding_player = AudioStreamPlayer.new()
 	ding_player.stream = preload("res://sounds/Ding.mp3")
@@ -231,7 +259,8 @@ func setupAudio():
 	incorrect_player = AudioStreamPlayer.new()
 	incorrect_player.stream = preload("res://sounds/Incorrect.mp3")
 	add_child(incorrect_player)
-	
+
+#on first load set up board and audio players
 func _ready():
 	setupBoard()
 	setupAudio()

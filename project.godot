@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Wheel Of Fortune"
+config/name="CustomFortuneWheel"
 run/main_scene="res://scenes/main_display.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"

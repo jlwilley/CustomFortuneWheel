@@ -152,6 +152,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
 [node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry6"]
+clip_contents = true
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -204,7 +205,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry9"]
+[node name="currentTeamPoints" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry9"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -220,7 +221,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry10"]
+[node name="teamPointsBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry10"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -273,7 +274,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry13"]
+[node name="currentTeamBank" type="Label" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry13"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -289,7 +290,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry14"]
+[node name="teamBankBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry14"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -412,7 +413,7 @@ layout_mode = 1
 offset_right = 200.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 25
-text = "Team 1"
+text = "Team 2"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
@@ -423,12 +424,13 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
 [node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry6"]
+clip_contents = true
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 25
-text = "Team 1"
+text = "Team 2"
 alignment = 1
 
 [node name="gridEntry7" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer"]
@@ -436,7 +438,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry7"]
+[node name="team2UpdateNameButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry7"]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -475,7 +477,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry9"]
+[node name="currentTeamPoints" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry9"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -491,7 +493,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry10"]
+[node name="teamPointsBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry10"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -505,7 +507,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry11"]
+[node name="team2UpdatePoints" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry11"]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -544,7 +546,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry13"]
+[node name="currentTeamBank" type="Label" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry13"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -560,7 +562,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry14"]
+[node name="teamBankBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry14"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -574,7 +576,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry15"]
+[node name="team2UpdateBank" type="Button" parent="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry15"]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -683,7 +685,7 @@ layout_mode = 1
 offset_right = 200.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 25
-text = "Team 1"
+text = "Team 3"
 horizontal_alignment = 1
 vertical_alignment = 1
 clip_text = true
@@ -694,12 +696,13 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
 [node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry6"]
+clip_contents = true
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
 offset_bottom = 80.0
 theme_override_font_sizes/font_size = 25
-text = "Team 1"
+text = "Team 3"
 alignment = 1
 
 [node name="gridEntry7" type="Panel" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer"]
@@ -707,7 +710,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry7"]
+[node name="team3UpdateNameButton" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry7"]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -746,7 +749,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry9"]
+[node name="currentTeamPoints" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry9"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -762,7 +765,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry10"]
+[node name="teamPointsBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry10"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -776,7 +779,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry11"]
+[node name="team3UpdatePoints" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry11"]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -815,7 +818,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="currentTeamName" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry13"]
+[node name="currentTeamBank" type="Label" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry13"]
 custom_minimum_size = Vector2(0, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -831,7 +834,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="teamTextBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry14"]
+[node name="teamBankBox" type="LineEdit" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry14"]
 custom_minimum_size = Vector2(200, 80)
 layout_mode = 1
 offset_right = 200.0
@@ -845,7 +848,7 @@ custom_minimum_size = Vector2(200, 80)
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_84132")
 
-[node name="Button" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry15"]
+[node name="team3UpdateBank" type="Button" parent="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry15"]
 custom_minimum_size = Vector2(150, 60)
 layout_mode = 1
 anchors_preset = 8
@@ -873,12 +876,18 @@ offset_left = -500.0
 offset_bottom = 1080.0
 grow_horizontal = 0
 
-[node name="OptionButton" type="OptionButton" parent="CanvasLayer/Control/Panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/Panel"]
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 0
-offset_right = 159.0
-offset_bottom = 76.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="teamOption" type="OptionButton" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+clip_text = true
 item_count = 3
-selected = 1
+selected = 0
 popup/item_0/text = "Team 1"
 popup/item_0/id = 1
 popup/item_1/text = "Team 2"
@@ -886,12 +895,114 @@ popup/item_1/id = 2
 popup/item_2/text = "Team 3"
 popup/item_2/id = 3
 
-[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Control/Panel"]
-layout_mode = 0
-offset_left = 273.0
-offset_top = 22.0
-offset_right = 363.0
-offset_bottom = 53.0
+[node name="vowelContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="vowelOption" type="OptionButton" parent="CanvasLayer/Control/Panel/VBoxContainer/vowelContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+tooltip_text = "Vowel to Reveal"
+theme_override_font_sizes/font_size = 25
+
+[node name="buyVowelButton" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/vowelContainer"]
+layout_mode = 2
+tooltip_text = "Team buys vowel if they have 250 points to spend"
+theme_override_font_sizes/font_size = 25
+text = "Buy Vowel"
+
+[node name="freePlayButton" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/vowelContainer"]
+layout_mode = 2
+tooltip_text = "Team gets vowel for free from free play"
+theme_override_font_sizes/font_size = 25
+text = "Free Play"
+
+[node name="consonantContainer" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="WheelOption" type="OptionButton" parent="CanvasLayer/Control/Panel/VBoxContainer/consonantContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+tooltip_text = "Option Spun on Wheel"
+theme_override_font_sizes/font_size = 25
+
+[node name="ConsonantOption" type="OptionButton" parent="CanvasLayer/Control/Panel/VBoxContainer/consonantContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+tooltip_text = "Consonant to Reveal"
+theme_override_font_sizes/font_size = 25
+
+[node name="revealConsonant" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/consonantContainer"]
+layout_mode = 2
+tooltip_text = "Reveal and Give Points"
+theme_override_font_sizes/font_size = 25
+text = "Reveal"
+
+[node name="turnButtons" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="skipTurnButton" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/turnButtons"]
+layout_mode = 2
+tooltip_text = "Skip selected Teams Turn"
+theme_override_font_sizes/font_size = 25
+text = "Skip Turn"
+
+[node name="bankruptButton" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/turnButtons"]
+layout_mode = 2
+tooltip_text = "Bankrupt Selected Team"
+theme_override_font_sizes/font_size = 25
+text = "Bankrupt"
+
+[node name="solveButton" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/turnButtons"]
+layout_mode = 2
+tooltip_text = "The selected team Solves the puzzle"
+theme_override_font_sizes/font_size = 25
+text = "Solve"
+
+[node name="toggleButtons" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="slowReveal" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/toggleButtons"]
+layout_mode = 2
+tooltip_text = "Start the slow reveal Phase"
+theme_override_font_sizes/font_size = 25
+text = "Slow Reveal"
+
+[node name="toggleBank" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/toggleButtons"]
+layout_mode = 2
+tooltip_text = "Toggle Showing or Hiding Bank"
+theme_override_font_sizes/font_size = 25
+text = "Show Bank"
+
+[node name="videoOptionRow" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="videoOption" type="OptionButton" parent="CanvasLayer/Control/Panel/VBoxContainer/videoOptionRow"]
+custom_minimum_size = Vector2(450, 50)
+layout_mode = 2
+tooltip_text = "Video to Play"
+theme_override_font_sizes/font_size = 25
+clip_text = true
+
+[node name="videoButtons" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="playVideo" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/videoButtons"]
+layout_mode = 2
+tooltip_text = "Play the selected Video"
+theme_override_font_sizes/font_size = 25
+text = "Play Video"
+
+[node name="stopVideo" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/videoButtons"]
+layout_mode = 2
+tooltip_text = "Stops the currently Playing Video"
+theme_override_font_sizes/font_size = 25
+text = "Stop Video"
 
 [node name="puzzleControls" type="Panel" parent="CanvasLayer/Control"]
 custom_minimum_size = Vector2(500, 1080)
@@ -904,13 +1015,19 @@ offset_right = -568.0
 offset_bottom = 1080.0
 grow_horizontal = 0
 
-[node name="managePuzzleBox" type="Panel" parent="CanvasLayer/Control/puzzleControls"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/puzzleControls"]
+custom_minimum_size = Vector2(500, 1080)
 layout_mode = 0
-offset_right = 500.0
-offset_bottom = 300.0
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/separation = 50
+
+[node name="managePuzzleBox" type="Panel" parent="CanvasLayer/Control/puzzleControls/VBoxContainer"]
+custom_minimum_size = Vector2(500, 300)
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lwtfo")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox"]
 custom_minimum_size = Vector2(500, 300)
 layout_mode = 1
 anchors_preset = 5
@@ -923,16 +1040,17 @@ grow_horizontal = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="puzzleSelector" type="OptionButton" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer"]
+[node name="puzzleSelector" type="OptionButton" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
+clip_text = true
 
-[node name="solutionPanel" type="Panel" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer"]
+[node name="solutionPanel" type="Panel" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="puzzleSolution" type="Label" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/solutionPanel"]
+[node name="puzzleSolution" type="Label" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/solutionPanel"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 offset_right = 500.0
@@ -940,12 +1058,13 @@ offset_bottom = 50.0
 theme_override_font_sizes/font_size = 25
 text = "Solution"
 vertical_alignment = 1
+clip_text = true
 
-[node name="pointsPanel" type="Panel" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer"]
+[node name="pointsPanel" type="Panel" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
-[node name="points" type="Label" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/pointsPanel"]
+[node name="points" type="Label" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/pointsPanel"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 1
 offset_right = 500.0
@@ -953,63 +1072,85 @@ offset_bottom = 50.0
 theme_override_font_sizes/font_size = 25
 text = "Points"
 vertical_alignment = 1
+clip_text = true
 
-[node name="loadPuzzleButton" type="Button" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="loadPuzzleButton" type="Button" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 25
 text = "Load Puzzle"
 
-[node name="deletePuzzleButton" type="Button" parent="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="deletePuzzleButton" type="Button" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
 size_flags_horizontal = 0
 theme_override_font_sizes/font_size = 25
 text = "Delete Puzzle"
 
-[node name="addPuzzleBox" type="Panel" parent="CanvasLayer/Control/puzzleControls"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -200.0
-offset_right = 250.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="addPuzzleBox" type="Panel" parent="CanvasLayer/Control/puzzleControls/VBoxContainer"]
+custom_minimum_size = Vector2(500, 200)
+layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_je0rh")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/puzzleControls/addPuzzleBox"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/addPuzzleBox"]
 custom_minimum_size = Vector2(500, 200)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 alignment = 1
 
-[node name="clueEdit" type="LineEdit" parent="CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer"]
+[node name="clueEdit" type="LineEdit" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/addPuzzleBox/VBoxContainer"]
+clip_contents = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 placeholder_text = "Clue"
 
-[node name="solutionEdit" type="LineEdit" parent="CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer"]
+[node name="solutionEdit" type="LineEdit" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/addPuzzleBox/VBoxContainer"]
+clip_contents = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 placeholder_text = "Solution"
 
-[node name="pointsEdit" type="LineEdit" parent="CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer"]
+[node name="pointsEdit" type="LineEdit" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/addPuzzleBox/VBoxContainer"]
+clip_contents = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 placeholder_text = "Points"
 
-[node name="addPuzzleButton" type="Button" parent="CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer"]
+[node name="addPuzzleButton" type="Button" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/addPuzzleBox/VBoxContainer"]
 layout_mode = 2
 text = "Add Puzzle"
 
 [connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry7/team1UpdateName" to="." method="_on_team_1_update_name_pressed"]
-[connection signal="item_selected" from="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/puzzleSelector" to="." method="_on_puzzle_selector_item_selected"]
-[connection signal="pressed" from="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/loadPuzzleButton" to="." method="_on_load_puzzle_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/deletePuzzleButton" to="." method="_on_delete_puzzle_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer/addPuzzleButton" to="." method="_on_add_puzzle_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry11/team1UpdatePoints" to="." method="_on_team_1_update_points_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team1Panel/GridContainer/gridEntry15/team1UpdateBank" to="." method="_on_team_1_update_bank_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry7/team2UpdateNameButton" to="." method="_on_team_2_update_name_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry11/team2UpdatePoints" to="." method="_on_team_2_update_points_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team2Panel/GridContainer/gridEntry15/team2UpdateBank" to="." method="_on_team_2_update_bank_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry7/team3UpdateNameButton" to="." method="_on_team_3_update_name_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry11/team3UpdatePoints" to="." method="_on_team_3_update_points_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/VBoxContainer/team3Panel/GridContainer/gridEntry15/team3UpdateBank" to="." method="_on_team_3_update_bank_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Control/Panel/VBoxContainer/teamOption" to="." method="_on_team_option_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/vowelContainer/buyVowelButton" to="." method="_on_buy_vowel_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/vowelContainer/freePlayButton" to="." method="_on_free_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/consonantContainer/revealConsonant" to="." method="_on_reveal_consonant_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/turnButtons/skipTurnButton" to="." method="_on_skip_turn_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/turnButtons/bankruptButton" to="." method="_on_bankrupt_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/turnButtons/solveButton" to="." method="_on_solve_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/toggleButtons/slowReveal" to="." method="_on_slow_reveal_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/toggleButtons/toggleBank" to="." method="_on_toggle_bank_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/playVideo" to="." method="_on_play_video_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/stopVideo" to="." method="_on_stop_video_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/puzzleSelector" to="." method="_on_puzzle_selector_item_selected"]
+[connection signal="pressed" from="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/HBoxContainer2/loadPuzzleButton" to="." method="_on_load_puzzle_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/HBoxContainer/deletePuzzleButton" to="." method="_on_delete_puzzle_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/puzzleControls/VBoxContainer/addPuzzleBox/VBoxContainer/addPuzzleButton" to="." method="_on_add_puzzle_button_pressed"]

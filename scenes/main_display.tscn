@@ -22,30 +22,30 @@ border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l63mo"]
 bg_color = Color(0.937255, 0.278431, 0.435294, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71oen"]
 bg_color = Color(1, 0.819608, 0.4, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 shadow_size = 10
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hcof8"]
 bg_color = Color(0.0235294, 0.839216, 0.627451, 1)
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 shadow_size = 10
@@ -1717,6 +1717,13 @@ theme_override_font_sizes/font_size = 45
 text = "0"
 horizontal_alignment = 1
 clip_text = true
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer/BoardControl"]
+z_index = 3
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [node name="Window" type="Window" parent="."]
 initial_position = 3
