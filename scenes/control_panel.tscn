@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bt14ln41ck803"]
+[gd_scene load_steps=10 format=3 uid="uid://bt14ln41ck803"]
 
 [ext_resource type="Script" path="res://scripts/control_panel.gd" id="1_45841"]
+[ext_resource type="Theme" uid="uid://b2i8f3dv065mm" path="res://scenes/Themes/PopUpMenu.tres" id="2_gkb04"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5xcxt"]
 bg_color = Color(0.937255, 0.278431, 0.435294, 1)
@@ -903,6 +904,7 @@ alignment = 1
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 tooltip_text = "Vowel to Reveal"
+theme = ExtResource("2_gkb04")
 theme_override_font_sizes/font_size = 25
 
 [node name="buyVowelButton" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/vowelContainer"]
@@ -925,12 +927,14 @@ alignment = 1
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 tooltip_text = "Option Spun on Wheel"
+theme = ExtResource("2_gkb04")
 theme_override_font_sizes/font_size = 25
 
 [node name="ConsonantOption" type="OptionButton" parent="CanvasLayer/Control/Panel/VBoxContainer/consonantContainer"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 tooltip_text = "Consonant to Reveal"
+theme = ExtResource("2_gkb04")
 theme_override_font_sizes/font_size = 25
 
 [node name="revealConsonant" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/consonantContainer"]
@@ -985,6 +989,7 @@ alignment = 1
 custom_minimum_size = Vector2(450, 50)
 layout_mode = 2
 tooltip_text = "Video to Play"
+theme = ExtResource("2_gkb04")
 theme_override_font_sizes/font_size = 25
 clip_text = true
 
@@ -1003,6 +1008,12 @@ layout_mode = 2
 tooltip_text = "Stops the currently Playing Video"
 theme_override_font_sizes/font_size = 25
 text = "Stop Video"
+
+[node name="openFolder" type="Button" parent="CanvasLayer/Control/Panel/VBoxContainer/videoButtons"]
+layout_mode = 2
+tooltip_text = "Opens Folder for Saving Videos In"
+theme_override_font_sizes/font_size = 25
+text = "Open Folder"
 
 [node name="puzzleControls" type="Panel" parent="CanvasLayer/Control"]
 custom_minimum_size = Vector2(500, 1080)
@@ -1043,6 +1054,8 @@ alignment = 1
 [node name="puzzleSelector" type="OptionButton" parent="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+tooltip_text = "Puzzle to Load"
+theme = ExtResource("2_gkb04")
 theme_override_font_sizes/font_size = 25
 clip_text = true
 
@@ -1056,7 +1069,7 @@ layout_mode = 1
 offset_right = 500.0
 offset_bottom = 50.0
 theme_override_font_sizes/font_size = 25
-text = "Solution"
+text = "Clue"
 vertical_alignment = 1
 clip_text = true
 
@@ -1150,6 +1163,7 @@ text = "Add Puzzle"
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/toggleButtons/toggleBank" to="." method="_on_toggle_bank_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/playVideo" to="." method="_on_play_video_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/stopVideo" to="." method="_on_stop_video_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/openFolder" to="." method="_on_open_folder_pressed"]
 [connection signal="item_selected" from="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/puzzleSelector" to="." method="_on_puzzle_selector_item_selected"]
 [connection signal="pressed" from="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/HBoxContainer2/loadPuzzleButton" to="." method="_on_load_puzzle_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/HBoxContainer/deletePuzzleButton" to="." method="_on_delete_puzzle_button_pressed"]

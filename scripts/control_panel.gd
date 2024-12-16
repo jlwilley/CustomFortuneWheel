@@ -109,7 +109,7 @@ func refresh():
 func refreshPuzzles():
 	puzzleSelector.clear()
 	for item in puzzles:
-		puzzleSelector.add_item(item.clue)
+		puzzleSelector.add_item(item.solution)
 	if puzzles.size() >= 1:
 		_on_puzzle_selector_item_selected(0)
 
@@ -242,7 +242,7 @@ func _on_load_puzzle_button_pressed():
 #when changing selected puzzle update all relevant fields
 func _on_puzzle_selector_item_selected(_index):
 	var currentIdx = puzzleSelector.get_selected_id()
-	get_node("CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/solutionPanel/puzzleSolution").text = puzzles[currentIdx].solution
+	get_node("CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/solutionPanel/puzzleSolution").text = puzzles[currentIdx].clue
 	get_node("CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/pointsPanel/points").text = "$ " + str(puzzles[currentIdx].reward)
 
 #checks if selected team can buy a vowel if they can reveal it
@@ -407,3 +407,8 @@ func _on_play_video_pressed():
 func _on_stop_video_pressed():
 	if(main_display.videoPlayer.is_playing()):
 		main_display.videoPlayer.stop()
+
+#opens video folder
+func _on_open_folder_pressed():
+	var absolute_path = ProjectSettings.globalize_path(video_folder)
+	OS.shell_open(absolute_path)
