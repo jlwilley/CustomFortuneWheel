@@ -64,11 +64,11 @@ func revealAll():
 				await get_tree().create_timer(.125).timeout
 	print("revealing")
 	
-func reveal(char):
+func reveal(character):
 	var charCount = 0
 	for row in board:
 		for col in row:
-			if col.revealed == false && col.value != null && col.value == char.capitalize():
+			if col.revealed == false && col.value != null && col.value == character.capitalize():
 				col.display.add_theme_stylebox_override("panel", correctBoxTheme)
 				ding_player.play()
 				await get_tree().create_timer(.4).timeout
@@ -83,7 +83,6 @@ func reveal(char):
 
 func formatStringToBoard(inputString):
 	var words = inputString.split(" ")
-	var current_word_index = 0
 	var min_row = min_display_rows(words)
 	
 	print("Displaying on " + str(min_row) +  " rows.")
@@ -171,18 +170,18 @@ func min_display_rows(words):
 		return 5
 	elif(total_length <= 14):
 		return 1
-	elif(total_length <= 29 && checkOverflow(words, total_length, 2)):
+	elif(total_length <= 29 && checkOverflow(words, 2)):
 		return 2
 	elif(total_length <= 51 && largest_word_length > 12):
 		return 5
-	elif(total_length <= 38 && checkOverflow(words, total_length, 3)):
+	elif(total_length <= 38 && checkOverflow(words, 3)):
 		return 3
-	elif(total_length <= 51 && checkOverflow(words, total_length, 4)):
+	elif(total_length <= 51 && checkOverflow(words, 4)):
 		return 4
 	else:
 		return 5
 
-func checkOverflow(words, total_length, num_lines):
+func checkOverflow(words, num_lines):
 	var max_line_length
 	if(num_lines == 2):
 		max_line_length = 14

@@ -5,7 +5,7 @@ var puzzles
 var currentReward
 # Filepath for saving
 var save_path = "user://puzzles.json"
-@onready var puzzleSelector = get_node("CanvasLayer/Control/Panel2/puzzleSelector")
+@onready var puzzleSelector = get_node("CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/puzzleSelector")
 
 class puzzle:
 	var clue
@@ -119,7 +119,7 @@ func add_puzzle(clue, solution, points):
 	save_puzzles()
 
 func delete_puzzle(idx):
-	puzzles.remove(idx)
+	puzzles.remove_at(idx)
 	refreshPuzzles()
 	save_puzzles()
 	
@@ -129,7 +129,21 @@ func load_puzzle(idx):
 	currentReward = p.reward
 
 func _on_add_puzzle_button_pressed():
-	var clue = get_node("CanvasLayer/Control/Panel2/Panel/VBoxContainer/clueEdit").text
-	var solution = get_node("CanvasLayer/Control/Panel2/Panel/VBoxContainer/solutionEdit").text
-	var points = get_node("CanvasLayer/Control/Panel2/Panel/VBoxContainer/pointsEdit").text
+	var clue = get_node("CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer/clueEdit").text
+	var solution = get_node("CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer/solutionEdit").text
+	var points = get_node("CanvasLayer/Control/puzzleControls/addPuzzleBox/VBoxContainer/pointsEdit").text
 	add_puzzle(clue, solution, points)
+
+
+func _on_delete_puzzle_button_pressed():
+	delete_puzzle(puzzleSelector.get_selected_id())
+
+
+func _on_load_puzzle_button_pressed():
+	load_puzzle(puzzleSelector.get_selected_id())
+
+
+func _on_puzzle_selector_item_selected(index):
+	var currentIdx = puzzleSelector.get_selected_id()
+	get_node("CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/solutionPanel/puzzleSolution").text = puzzles[currentIdx].solution
+	get_node("CanvasLayer/Control/puzzleControls/managePuzzleBox/VBoxContainer/pointsPanel/points").text = "$ " + str(puzzles[currentIdx].reward)

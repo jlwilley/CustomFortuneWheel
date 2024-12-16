@@ -23,14 +23,10 @@ func _ready():
 	controlPanel.setup(self)
 	control_window.add_child(controlPanel)
 	control_window.visible = true
-	var original_font = control_window.get_theme_font("font","")
-	var font_instance = original_font.duplicate()
-	control_window.add_theme_font_override("font", font_instance)
 	puzzleBoard = get_node("CanvasLayer/BoardControl/Puzzleboard")
 	consonants = get_node("CanvasLayer/BoardControl/Consonants")
 	vowels = get_node("CanvasLayer/BoardControl/Vowel Panel")
 	scorePanel = get_node("CanvasLayer/BoardControl/ScorePanel")
-	setup("test", "test puzzle")
 
 func _input(event):
 	if Input.is_action_just_pressed("toggle_fullscreen"):
