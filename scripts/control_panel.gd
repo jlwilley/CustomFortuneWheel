@@ -30,10 +30,18 @@ var wheelOption
 var isRevealing = false
 #if the display is currently showing bank values
 var isShowingBank = false
+#if the happy song is playing
+var isPlayingHappy = false
+#if the thinking song is playing
+var isPlayingThinking = false
 #reference to the option box that displays videos
 @onready var videoOption = get_node("CanvasLayer/Control/Panel/VBoxContainer/videoOptionRow/videoOption")
-
-
+#audio player for thinking song
+@onready var thinking_song_player = AudioStreamPlayer.new()
+@onready var tension_song_player = AudioStreamPlayer.new()
+@onready var happy_song_player = AudioStreamPlayer.new()
+@onready var playHappyButton = get_node("CanvasLayer/Control/Panel/VBoxContainer/musicButtons/playHappy")
+@onready var playThinkingButton = get_node("CanvasLayer/Control/Panel/VBoxContainer/musicButtons/playThinking")
 #class that contains puzzles
 #puzzles have a clue, solution, and reward
 class puzzle:
@@ -62,8 +70,19 @@ func _on_about_to_quit():
 	print("Exit Called Saving")
 	save_puzzles()
 
+
+func setup_audio():
+	thinking_song_player.stream = preload("res://music/thinkingSong.wav")
+	add_child(thinking_song_player)
+	thinking_song_player.finished.connect(_on_thinking_finished)
+	happy_song_player.stream = preload("res://music/happySong.wav")
+	add_child(happy_song_player)
+	tension_song_player.stream = preload("res://music/tensionSong.wav")
+	add_child(tension_song_player)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	setup_audio()
 	#setup randomizer
 	randomize()
 	#initalize variables
@@ -183,10 +202,10 @@ func delete_puzzle(idx):
 #load puzzle from specified index
 func load_puzzle(idx):
 	if(idx != -1):
-		var p = puzzles[idx]
-		main_display.setup(p.clue, p.solution)
-		currentReward = p.reward
-		setup_letters()
+			var p = puzzles[idx]
+			main_display.setup(p.clue, p.solution)
+			currentReward = p.reward
+			setup_letters()
 	else:
 		print("cannot load puzzle")
 
@@ -249,7 +268,7 @@ func _on_puzzle_selector_item_selected(_index):
 func _on_buy_vowel_button_pressed():
 	var vowelBox = get_node("CanvasLayer/Control/Panel/VBoxContainer/vowelContainer/vowelOption")
 	if main_display.getScore(teamBox.get_selected_id()) >= vowelCost:
-		main_display.reveal(vowelBox.get_item_text(vowelBox.selected))
+		main_display.reveal(vowelBox.get_item_text(vowelBox.selected), true)
 		vowelBox.remove_item(vowelBox.selected)
 		main_display.addPoints(teamBox.get_selected_id(), -250)
 	else:
@@ -258,7 +277,7 @@ func _on_buy_vowel_button_pressed():
 #reveal vowel that is selected
 func _on_free_play_button_pressed():
 	var vowelBox = get_node("CanvasLayer/Control/Panel/VBoxContainer/vowelContainer/vowelOption")
-	main_display.reveal(vowelBox.get_item_text(vowelBox.selected))
+	main_display.reveal(vowelBox.get_item_text(vowelBox.selected),true)
 	vowelBox.remove_item(vowelBox.selected) 
 
 #updates team 1 name
@@ -345,7 +364,7 @@ func _on_solve_button_pressed():
 #reveals consonants and calculates how many points it was worth for selected team
 func _on_reveal_consonant_pressed():
 	var consonantBox = get_node("CanvasLayer/Control/Panel/VBoxContainer/consonantContainer/ConsonantOption")
-	var letter_count = await main_display.reveal(consonantBox.get_item_text(consonantBox.selected))
+	var letter_count = await main_display.reveal(consonantBox.get_item_text(consonantBox.selected),true)
 	if(letter_count == 0):
 		next_team()
 	else:
@@ -356,9 +375,17 @@ func _on_reveal_consonant_pressed():
 func _on_slow_reveal_pressed():
 	var slowRevealButton = get_node("CanvasLayer/Control/Panel/VBoxContainer/toggleButtons/slowReveal")
 	if isRevealing:
+		tension_song_player.stop()
 		isRevealing = false
 		slowRevealButton.text = "Slow Reveal"
 	else:
+		isPlayingThinking = false
+		playThinkingButton.text = "Play Thinking"
+		thinking_song_player.stop()
+		isPlayingHappy = false
+		playHappyButton.text = "Play Happy"
+		happy_song_player.stop()
+		tension_song_player.play()
 		isRevealing = true
 		slowRevealButton.text = "Stop Revealing"
 		slowReveal()
@@ -376,13 +403,13 @@ func slowReveal():
 			return
 		var random_index = randi() % totalCount
 		if random_index < consonantCount:
-			await main_display.reveal(consonantBox.get_item_text(random_index))
+			await main_display.reveal(consonantBox.get_item_text(random_index),false)
 			consonantBox.remove_item(random_index)
 		else:
 			var adjustedIndex = random_index - consonantCount
-			await main_display.reveal(vowelBox.get_item_text(adjustedIndex))
+			await main_display.reveal(vowelBox.get_item_text(adjustedIndex),false)
 			vowelBox.remove_item(adjustedIndex)
-		await get_tree().create_timer(1.0).timeout
+		await get_tree().create_timer(.75).timeout
 
 #toggles between showing and hiding bank
 func _on_toggle_bank_pressed():
@@ -412,3 +439,50 @@ func _on_stop_video_pressed():
 func _on_open_folder_pressed():
 	var absolute_path = ProjectSettings.globalize_path(video_folder)
 	OS.shell_open(absolute_path)
+
+#happy song player
+func _on_play_happy_pressed():
+	if isPlayingHappy:
+
+		isPlayingHappy = false
+		playHappyButton.text = "Play Happy"
+		happy_song_player.stop()
+	else:
+		isPlayingThinking = false
+		playThinkingButton.text = "Play Thinking"
+		thinking_song_player.stop()
+		isPlayingHappy = true
+		playHappyButton.text = "Stop Happy"
+		happy_song_player.play()
+
+#if thinking player finished on its own update button
+func _on_thinking_finished():
+	isPlayingThinking = false
+	playThinkingButton.text = "Play Thinking"
+
+func _on_play_thinking_pressed():
+	if isPlayingThinking:
+		isPlayingThinking = false
+		playThinkingButton.text = "Play Thinking"
+		thinking_song_player.stop()
+	else:
+		isPlayingHappy = false
+		playHappyButton.text = "Play Happy"
+		happy_song_player.stop()
+		isPlayingThinking = true
+		playThinkingButton.text = "Stop Thinking"
+		thinking_song_player.play()
+
+#setups bonus round with player letters
+func _on_setup_bonus_pressed():
+	var newLetters = get_node("CanvasLayer/Control/Panel/VBoxContainer/finalPuzzleButton/LineEdit").text
+	for c in newLetters:
+		await get_tree().create_timer(.6).timeout
+		await main_display.reveal(c, true)
+
+#sets up bonus round with rstlne
+func _on_rstlne_button_pressed():
+	var newLetters = "rstlne"
+	for c in newLetters:
+		await get_tree().create_timer(.6).timeout
+		await main_display.reveal(c, true)

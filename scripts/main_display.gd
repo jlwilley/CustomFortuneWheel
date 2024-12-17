@@ -104,14 +104,14 @@ func reset():
 	puzzleBoard.resetBoard()
 
 #reveals the specified letter on the puzzle board
-func reveal(letter):
+func reveal(letter, audio):
 	for con in get_node("CanvasLayer/BoardControl/Consonants/HBoxContainer").get_children():
 		if(con.text.capitalize() == letter.capitalize()):
 			con.set("theme_override_colors/font_color", Color(1,0,0))
 	for vow in get_node("CanvasLayer/BoardControl/Vowel Panel/HBoxContainer").get_children():
 		if(vow.text.capitalize() == letter.capitalize()):
 			vow.set("theme_override_colors/font_color", Color(1,0,0))
-	return await puzzleBoard.reveal(letter)
+	return await puzzleBoard.reveal(letter, audio)
 
 #refreshes the scoreboard with the most up to date values
 func refreshScore():
@@ -192,16 +192,23 @@ func bank():
 	team3Score = 0
 	refreshScore()
 
+
+var tempScore1 = 0
+var tempScore2 = 0
+var tempScore3 = 0
+
 #hides the current bank values for each team
 func hideBank():
-	team1Score = 0
-	team2Score = 0
-	team3Score = 0
+	team1Score = tempScore1
+	team2Score = tempScore2
+	team3Score = tempScore3
 	refreshScore()
 
 #shows the current bank values for each team
 func showBank():
-	bank()
+	tempScore1 = team1Score
+	tempScore2 = team2Score
+	tempScore3 = team3Score
 	team1Score = team1Bank
 	team2Score = team2Bank
 	team3Score = team3Bank

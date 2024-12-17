@@ -82,14 +82,15 @@ func revealAll():
 	print("revealing")
 
 #reveals the specified character on the board and returns the number of that character that was on board
-func reveal(character):
+func reveal(character, audio):
 	var charCount = 0
 	for row in board:
 		for col in row:
 			#checks if the entry has been revealed and if the value matches the specified one
 			if col.revealed == false && col.value != null && col.value == character.capitalize():
 				col.display.add_theme_stylebox_override("panel", correctBoxTheme)
-				ding_player.play()
+				if audio:
+					ding_player.play()
 				await get_tree().create_timer(.4).timeout
 				col.reveal()
 				col.display.add_theme_stylebox_override("panel", letterBoxTheme)
@@ -98,7 +99,8 @@ func reveal(character):
 				
 	#If there was no value play the incorrect sound effect
 	if charCount == 0:
-		incorrect_player.play()
+		if audio:
+			incorrect_player.play()
 	return charCount
 
 #format the given string to the board by updating entries
@@ -154,11 +156,11 @@ func formatStringToBoard(inputString):
 			for c in word:
 				if(rowCount in [0,3]):
 					board[rowCount][charCount].value = c.capitalize()
-					if(c.capitalize() in ",.'!?"):
+					if(c.capitalize() in ",.'!?&*/%"):
 						board[rowCount][charCount].reveal()
 				else:
 					board[rowCount][charCount + 1].value = c.capitalize()
-					if(c.capitalize() in ",.'!?"):
+					if(c.capitalize() in ",.'!?&*/%"):
 						board[rowCount][charCount + 1].reveal()
 				charCount += 1
 			charCount +=1
