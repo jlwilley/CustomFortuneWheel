@@ -1724,6 +1724,7 @@ custom_minimum_size = Vector2(1920, 1080)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+expand = true
 
 [node name="Window" type="Window" parent="."]
 initial_position = 3

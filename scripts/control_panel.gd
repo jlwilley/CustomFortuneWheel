@@ -23,7 +23,7 @@ const vowelCost = 250
 #reference to the option for the currently selected team
 @onready var teamBox = get_node("CanvasLayer/Control/Panel/VBoxContainer/teamOption")
 #reference to the different possible wheel tiles
-var wheelTiles = [300,350,400,450,500,550,600,700,800,900,1000,2500]
+var wheelTiles = [300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000,2500]
 #reference to the currently spun wheel tile
 var wheelOption
 #if the board is currently revealing letters
