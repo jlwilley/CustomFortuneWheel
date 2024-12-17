@@ -8,6 +8,7 @@ The **Puzzle-Based Fortune Game** is an interactive tool perfect for parties, ev
 - A **control panel** for hosts to manage the game.
 - A **player-facing display** for puzzles and videos.
 - The ability to create, edit, and manage puzzles directly within the game.
+![Custom Fortune Wheel Screenshot](images/exampleBoard.png)
 
 ## 🌟 Key Features
 - 🖥️ **Two-Monitor Setup**: 
