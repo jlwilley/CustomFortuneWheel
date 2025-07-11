@@ -887,8 +887,8 @@ offset_bottom = 40.0
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 clip_text = true
-item_count = 3
 selected = 0
+item_count = 3
 popup/item_0/text = "Team 1"
 popup/item_0/id = 1
 popup/item_1/text = "Team 2"
@@ -1014,6 +1014,18 @@ layout_mode = 2
 tooltip_text = "Opens Folder for Saving Videos In"
 theme_override_font_sizes/font_size = 25
 text = "Open Folder"
+
+[node name="videoSound" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="volumeSlider" type="HSlider" parent="CanvasLayer/Control/Panel/VBoxContainer/videoSound"]
+custom_minimum_size = Vector2(250, 50)
+layout_mode = 2
+tooltip_text = "Volume Control"
+max_value = 1.0
+step = 0.01
+value = 0.5
 
 [node name="musicButtons" type="HBoxContainer" parent="CanvasLayer/Control/Panel/VBoxContainer"]
 layout_mode = 2
@@ -1202,6 +1214,7 @@ text = "Add Puzzle"
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/playVideo" to="." method="_on_play_video_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/stopVideo" to="." method="_on_stop_video_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/videoButtons/openFolder" to="." method="_on_open_folder_pressed"]
+[connection signal="value_changed" from="CanvasLayer/Control/Panel/VBoxContainer/videoSound/volumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/musicButtons/playHappy" to="." method="_on_play_happy_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/musicButtons/playThinking" to="." method="_on_play_thinking_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/Panel/VBoxContainer/finalPuzzleButton/rstlneButton" to="." method="_on_rstlne_button_pressed"]

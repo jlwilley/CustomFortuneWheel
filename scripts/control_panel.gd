@@ -11,7 +11,7 @@ const save_path = "user://puzzles.json"
 #file path for loading vieos
 const video_folder = "user://videos/"
 #the required video format
-const SUPPORTED_FORMATS = ["ogv"]
+const SUPPORTED_FORMATS = ["ogv","mp4"]
 #reference to the puzzle selector option box
 @onready var puzzleSelector = get_node("CanvasLayer/Control/puzzleControls/VBoxContainer/managePuzzleBox/VBoxContainer/puzzleSelector")
 #valid vowels
@@ -486,3 +486,7 @@ func _on_rstlne_button_pressed():
 	for c in newLetters:
 		await get_tree().create_timer(.6).timeout
 		await main_display.reveal(c, true)
+
+
+func _on_volume_slider_value_changed(value: float) -> void:
+	main_display.videoPlayer.volume = value
